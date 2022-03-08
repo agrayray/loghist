@@ -10,7 +10,6 @@
 #	If not run this way, the log file will be
 #	empty
 #
-# author: Ray Lintner
 # date:	  2016-11-27
 ##
 
@@ -27,8 +26,8 @@ TIME_STAMP=$(date +%s)		# time in UTC seconds since 1970-01-01
 # for now remove hostname from filename
 # FILE_NAME=${LOCATION}${HOST_NAME}_${TIME_STAMP}.log
 # just use history_<timestamp>.log
-FILE_NAME=${LOCATION}history_${TIME_STAMP}.log
+FILE_NAME=${LOCATION}history_${TIME_STAMP}.txt
 
-history > $FILE_NAME
+history | cut -c 8- > $FILE_NAME
 
 echo "history logged to '$FILE_NAME'"
